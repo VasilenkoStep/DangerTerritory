@@ -1,0 +1,31 @@
+Temp=input("Введите температуру и в чем её и я покажу магию - ")
+if Temp[1:-1].isdigit() and Temp[0]=="-":
+    if Temp[-1]=="C":
+        a = float(Temp[1:-1])
+        a = - a
+        b = a*1.8+32
+        TempTwo = str(b) + "F"
+        print (TempTwo)
+    elif Temp[-1]=="F":
+        a= float(Temp[1:-1])
+        a = -a
+        b=(a-32)/1.8
+        TempTwo = str(b) + "C"
+        print (TempTwo)
+    else:
+          print("Введено не верно, пожалуйста повторите попытку...")
+elif Temp[:-1].isdigit() and not(Temp[0]=="-"):
+    if Temp[-1]=="C":
+        a = float(Temp[0:-1])
+        b = a*1.8+32
+        TempTwo = str(b) + "F"
+        print (TempTwo)
+    elif Temp[-1]=="F":
+        a= float(Temp[:-1])
+        b=(a-32)/1.8
+        TempTwo = str(b) + "C"
+        print (TempTwo)
+    else: 
+        print("Введено не верно, пожалуйста повторите попытку...")
+else:
+    print ("Введено не верно, пожалуйста повторите попытку...")
