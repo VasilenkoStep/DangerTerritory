@@ -1,0 +1,25 @@
+a = input("Введите целое число для которого вы хотите получить все простые числа - ")
+try: 
+    a = int(a)
+    print("Вы ввели число! Вау, как приятно!")
+except (ValueError,TypeError):
+    print("Введено не целое число")
+else:
+     N = list(range(2,a+1))
+if a == 2 or a == 3:
+        print(N)
+for i in N:
+        number_1 = i*i
+        if i==0:
+            continue
+        if number_1 < a:
+            b = N.index(number_1)
+            while b <= N.index(N[-1]):
+                N[b]=0
+                b = b + i   
+else:
+    N = set(N)
+    N.remove(0)
+    N = str(N)
+with open("PhytonFile.txt","r+" , encoding = "utf - 8") as f:
+        f.write("Получившиеся простые числа - " + N)
